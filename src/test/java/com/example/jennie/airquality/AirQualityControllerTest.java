@@ -30,7 +30,7 @@ public class AirQualityControllerTest {
     @DisplayName("testAirQualityController")
     public void testAirQualityController() throws Exception {
         //테스트 실행
-        MvcResult result = mockMvc.perform(get("/basic"))
+        MvcResult result = mockMvc.perform(get("/basic?sidoName=경기"))
                 .andExpect(status().isOk()) // basic 앤드포인트 접속 여부
                 .andExpect(view().name("airQuality")) // 올바른 뷰가 리턴되는지 여부
                 .andExpect(model().attributeExists("airQualityData")) // 모델에 객체가 존재하는지 여부 확인
